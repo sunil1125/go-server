@@ -1,0 +1,94 @@
+﻿<div id="divHazDetails" class="tableLayout">
+	<div class="table-cell">
+		<div id="content" class="padding-left-10">
+			<div id="gridDiv">
+				<div class="row-fluid">
+					<div id="divItemsContainer" class="span12 item-div-container">
+						<table id="tblHazmatItems" class="table table-bordered shipment-item">
+							<thead>
+								<tr>
+									<th>
+										<label class="align-center">Description</label>
+									</th>
+
+									<th>
+										<label class="align-center">Hazmat/UN#</label>
+									</th>
+									<th>
+										<label class="align-center">Packing Group#</label>
+									</th>
+									<th>
+										<label class="align-center">Hazardous Class</label>
+									</th>
+								</tr>
+							</thead>
+							<tbody data-bind='foreach: salesOrderItemsList' class="line-items">
+								<tr class="lineItemRow">
+									<td data-title="Description">
+										<!--<div data-bind=" validationElement: userDescription, validationOptions: { errorElementClass: 'input-validation-error' }">
+								<i class=" icon-question-sign tooltip-cursor"
+									data-bind="visible: (userDescription.isModified() && !userDescription.isValid()), tooltip: { title: userDescription.isModified() ? userDescription.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+								<input type="text" id="txtDescription" name="Commodity" class="requiredFieldBgColor" data-bind="style: { width: (userDescription.isModified() && !userDescription.isValid()) ? '91%' : '94%' }, value: userDescription, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }, uniqueName: true, enable: $parent.isSaveEnable" maxlength="150" />
+							</div>-->
+										<label id="lblDescription" class="validation-label2" data-bind=" validationElement: userDescription">
+											<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (userDescription.isModified() && !userDescription.isValid()), tooltip: { title: userDescription.isModified() ? userDescription.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+											<input type="text" class="requiredFieldBgColor validation2" name="Commodity" id="txtHazDescription" data-bind="css: { borderRedOnValidation: (userDescription.isModified() && !userDescription.isValid()) }, style: { 'padding-left': (userDescription.isModified() && !userDescription.isValid()) ? '18px' : '' }, value: userDescription, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', uniqueName: true, enable: $parent.isSaveEnable" maxlength="150" style="width: 94%;" />
+										</label>
+									</td>
+									<td data-title="HazmatUN">
+										<!--<div data-bind=" validationElement: hazmatUnNumber, validationOptions: { errorElementClass: 'input-validation-error' }">
+								<i class=" icon-question-sign tooltip-cursor" data-bind="visible: (hazmatUnNumber.isModified() && !hazmatUnNumber.isValid()), tooltip: { title: hazmatUnNumber.isModified() ? hazmatUnNumber.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+								<input type="text" id="hazmatUn" name="HazmatUN" maxlength="15" class="requiredFieldBgColor" data-bind="style: { width: (hazmatUnNumber.isModified() && !hazmatUnNumber.isValid()) ? '90%' : '94%' }, value: hazmatUnNumber, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }, uniqueName: true, enable: $parent.isSaveEnable" />
+							</div>-->
+										<label id="lblHazmatUN" class="validation-label2" data-bind=" validationElement: hazmatUnNumber">
+											<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (hazmatUnNumber.isModified() && !hazmatUnNumber.isValid()), tooltip: { title: hazmatUnNumber.isModified() ? hazmatUnNumber.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+											<input type="text" class="requiredFieldBgColor validation2" name="HazmatUN" id="hazmatUn" data-bind="css: { borderRedOnValidation: (hazmatUnNumber.isModified() && !hazmatUnNumber.isValid()) }, style: { 'padding-left': (hazmatUnNumber.isModified() && !hazmatUnNumber.isValid()) ? '18px' : '' }, value: hazmatUnNumber, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', uniqueName: true, enable: $parent.isSaveEnable" maxlength="15" style="width: 94%;" />
+										</label>
+									</td>
+
+									<td data-title="PackingGroup">
+										<!--<div data-bind=" validationElement: packingGroup, validationOptions: { errorElementClass: 'input-validation-error' }">
+								<i class=" icon-question-sign tooltip-cursor" data-bind="visible: (packingGroup.isModified() && !packingGroup.isValid()), tooltip: { title: packingGroup.isModified() ? packingGroup.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+								<input type="text" id="packingGroup" name="PackingGroup" maxlength="20" class="requiredFieldBgColor" data-bind="style: { width: (packingGroup.isModified() && !packingGroup.isValid()) ? '90%' : '94%' }, value: packingGroup, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }, uniqueName: true, enable: $parent.isSaveEnable" />
+							</div>-->
+										<label id="lblPackingGroup" class="validation-label2" data-bind=" validationElement: packingGroup">
+											<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (packingGroup.isModified() && !packingGroup.isValid()), tooltip: { title: packingGroup.isModified() ? packingGroup.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+											<input type="text" class="requiredFieldBgColor validation2" name="PackingGroup" id="packingGroup" data-bind="css: { borderRedOnValidation: (packingGroup.isModified() && !packingGroup.isValid()) }, style: { 'padding-left': (packingGroup.isModified() && !packingGroup.isValid()) ? '18px' : '' }, value: packingGroup, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', uniqueName: true, enable: $parent.isSaveEnable" maxlength="20" style="width: 94%;" />
+										</label>
+									</td>
+
+									<td data-title="HazardousClass">
+										<!--<div data-bind=" validationElement: hazardousClass, validationOptions: { errorElementClass: 'input-validation-error' }">
+							<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (hazardousClass.isModified() && !hazardousClass.isValid()), tooltip: { title: hazardousClass.isModified() ? hazardousClass.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+							<input id="hazardousClass" type="text" class="requiredFieldBgColor" data-bind="event: { keypress: isNumber }, style: { width: (hazardousClass.isModified() && !hazardousClass.isValid()) ? '90%' : '93%' }, value: hazardousClass, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', enable: $parent.isSaveEnable" maxlength="13" />
+						</div>-->
+										<label id="lblhazardousClass" class="validation-label2" data-bind=" validationElement: hazardousClass">
+											<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (hazardousClass.isModified() && !hazardousClass.isValid()), tooltip: { title: hazardousClass.isModified() ? hazardousClass.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+											<input type="text" class="requiredFieldBgColor validation2" name="hazardousClass" id="hazardousClass" data-bind="event: { keypress: isNumber }, css: { borderRedOnValidation: (hazardousClass.isModified() && !hazardousClass.isValid()) }, style: { 'padding-left': (hazardousClass.isModified() && !hazardousClass.isValid()) ? '18px' : '' }, value: hazardousClass, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', enable: $parent.isSaveEnable" maxlength="13" style="width: 93%;" />
+										</label>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table style="width: 23%;">
+							<tr>
+								<td class="typeLabels">Emergency Contact:
+								</td>
+								<td class="typeStatus">
+									<!--<div data-bind=" validationElement: emergencyPhone, validationOptions: { errorElementClass: 'input-validation-error padding-left-5' }">
+							<i class=" icon-question-sign tooltip-cursor" data-bind="visible: (emergencyPhone.isModified() && !emergencyPhone.isValid()), tooltip: { title: emergencyPhone.isModified() ? emergencyPhone.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+							<input id="EmergencyPhoneNo" class="requiredFieldBgColor" type="text"" maxlength="19"  data-bind="numeric:emergencyPhone , event: { keypress: formatToExtensionPhoneNumber(emergencyPhone) }, style: { width: (emergencyPhone.isModified() && !emergencyPhone.isValid()) ? '200px' : '220px' }, value: emergencyPhone, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', enable: isSaveEnable" />
+						</div>-->
+									<label id="Label1" class="validation-label2" data-bind=" validationElement: emergencyPhone">
+										<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (emergencyPhone.isModified() && !emergencyPhone.isValid()), tooltip: { title: emergencyPhone.isModified() ? emergencyPhone.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+										<input type="text" class="requiredFieldBgColor validation2" id="EmergencyPhoneNo" data-bind="numeric: emergencyPhone, event: { keypress: formatToExtensionPhoneNumber(emergencyPhone) }, css: { borderRedOnValidation: (emergencyPhone.isModified() && !emergencyPhone.isValid()) }, style: { 'padding-left': (emergencyPhone.isModified() && !emergencyPhone.isValid()) ? '18px' : '' }, value: emergencyPhone, validationOptions: { errorElementClass: null }, valueUpdate: 'afterkeydown', attr: { 'readonly': !(isSaveEnable()) }" maxlength="19" style="width: 93%;" />
+									</label>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

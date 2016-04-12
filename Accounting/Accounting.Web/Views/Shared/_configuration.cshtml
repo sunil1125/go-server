@@ -1,0 +1,56 @@
+﻿@using System.Collections
+@using System.Configuration
+<script lang="JavaScript" type="text/javascript">
+	!(function (utilsConstants) {
+		utilsConstants.HolidayList = (utilsConstants.HolidayList || new Array());
+		@if (ConfigurationManager.GetSection("Holidays") != null)
+  {
+	  Hashtable holidayList = ((Hashtable)ConfigurationManager.GetSection("Holidays"));
+	  foreach (var item in holidayList.Values)
+	  {
+				@:utilsConstants.HolidayList.push('@item')
+					}
+  }
+		@if (ConfigurationManager.AppSettings.AllKeys.Contains("AtlasBaseURL"))
+  {
+			@:utilsConstants.AtlasBaseURL = '@ConfigurationManager.AppSettings["AtlasBaseURL"].ToString()';
+		}
+  else
+  {
+			@:utilsConstants.AtlasBaseURL = '';
+				}
+		@if (ConfigurationManager.AppSettings.AllKeys.Contains("DefaultTabCounts"))
+  {
+			@:utilsConstants.DefaultTabCounts = '@ConfigurationManager.AppSettings["DefaultTabCounts"].ToString()';
+			   }
+
+	   @if (ConfigurationManager.AppSettings.AllKeys.Contains("jsVersion") && !String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["jsVersion"].ToString()))
+	{
+		@:utilsConstants.JSVersion = @ConfigurationManager.AppSettings["jsVersion"]
+	  }
+	else
+	{
+		@:utilsConstants.JSVersion = 1.0001;
+	 }
+
+		 @if (ConfigurationManager.AppSettings.AllKeys.Contains("DisputeCarrierContactToolUrl") && !String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["DisputeCarrierContactToolUrl"].ToString()))
+	{
+		@:utilsConstants.DisputeCarrierContactToolUrl = '@ConfigurationManager.AppSettings["DisputeCarrierContactToolUrl"].ToString()';
+	  }
+	else
+	{
+		@:utilsConstants.DisputeCarrierContactToolUrl = '';
+			 }
+
+		@if (ConfigurationManager.AppSettings.AllKeys.Contains("DelayForFileDownload"))
+	{
+		@:utilsConstants.DelayForFileDownload = '@ConfigurationManager.AppSettings["DelayForFileDownload"].ToString()';
+	}
+	else
+	{
+		@:utilsConstants.DelayForFileDownload = '';
+			}
+
+
+	})(Utils.Constants || (Utils.Constants = {}));
+</script>

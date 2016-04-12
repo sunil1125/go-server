@@ -1,0 +1,328 @@
+﻿<div id="vendorBillDetailsEditView" class="tableLayout">
+	<div class="table-cell fourDiv">
+		<table class="tbl-sales-order" style="width: 97%">
+			<!--class="tbl-sales-order"-->
+			<tr>
+				<td class="typeLabels" style="width: 24%;">*Vendor Name:
+				</td>
+				<td class="typeStatus" tabindex="1">
+					<div data-bind="compose: { model: vendorNameSearchList, view: 'templates/searchVendorNameControl' }, enable: isEnable"></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">*Pro #:
+				</td>
+				<td class="typeStatus" tabindex="2">
+					<!--<div data-bind=" validationElement: proNumber, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Vbill-Edit-AutoComplete-FieldsNewForPRO' }">
+						<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (proNumber.isModified() && !proNumber.isValid()), tooltip: { title: proNumber.isModified() ? proNumber.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+
+						<input id="VBproNumber" type="text" maxlength="15" placeholder="Pro Number" class="requiredFieldBgColor" data-bind="event: { keypress: isAlphaNumericSpace }, style: { width: (proNumber.isModified() && !proNumber.isValid()) ? '90.5%' : '93%' }, value: proNumber, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, attr: { 'disabled': isNewSubBill }" />
+					</div>-->
+					<label class="validation-label2" data-bind="validationElement: proNumber">
+						<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (proNumber.isModified() && !proNumber.isValid()), tooltip: { title: proNumber.isModified() ? proNumber.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+						<input type="text" id="VBproNumber" class="requiredFieldBgColor validation2" placeholder="Pro Number" data-bind="event: { keypress: isAlphaNumericSpace }, css: { borderRedOnValidation: (proNumber.isModified() && !proNumber.isValid()) }, style: { 'padding-left': (proNumber.isModified() && !proNumber.isValid()) ? '17px' : '' }, value: proNumber, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, attr: { 'disabled': isNewSubBill }, enable: isEnable" style="width: 93%" />
+					</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">BOL/Sales Order #:
+				</td>
+				<td class="typeStatus" tabindex="3">
+					<input type="text" class="vendorbillEdittextbox" maxlength="20" style="width: 93%;" data-bind="event: { keypress: isAlphaNumericSpace }, enable: isBolEnable, value: bolNumber, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }" />
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">*Bill Date:
+				</td>
+				<td class="typeStatus" tabindex="4">
+					<div class="typecontrols padding-top-0">
+						<!--<div data-bind=" validationElement: billDate, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Vbill-Edit-Fields' }" style="width:96%;">
+							<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (billDate.isModified() && !billDate.isValid()), tooltip: { title: billDate.isModified() ? billDate.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+							<div class="input-append date" id="datepicker" style="width:94%;" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true"
+								data-bind="datepicker: billDate, datepickerOptions: datepickerOptions">
+								<input id="billDate" type="text" size="16" class="requiredFieldBgColor span10" placeholder="mm/dd/yyyy" data-bind="event: { blur: convertToBillDate }, value: billDate, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }, style: { width: (billDate.isModified() && !billDate.isValid()) ? '90%' : '98%' }" maxlength="10" />
+								<span class="add-on" data-bind="css: { disabledateLink: isViewOnly() }">
+									<i class="icon-calendar"></i>
+								</span>
+							</div>
+						</div>-->
+						<div class="validation-label2" data-bind=" validationElement: billDate">
+							<i class="fa fa-question-circle valdation_icon" style="z-index: 9999;" data-bind=" visible: (billDate.isModified() && !billDate.isValid()), tooltip: { title: billDate.isModified() ? billDate.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+							<div class="input-append date" id="datepicker" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true"
+								data-bind="datepicker: billDate, datepickerOptions: datepickerOptions, css: { borderRedOnValidation: (billDate.isModified() && !billDate.isValid()) }" style="width: 97%;">
+
+								<input type="text" id="billDate" size="16" class="requiredFieldBgColor span10 validation2" placeholder="mm/dd/yyyy"
+									data-bind="event: { blur: convertToBillDate }, style: { 'padding-left': (billDate.isModified() && !billDate.isValid()) ? '17px' : '' }, value: billDate, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }, enable: isViewOnly()" maxlength="10" style="width: 91%" />
+								<span class="add-on" data-bind="css: { disabledateLink: !isViewOnly() }">
+									<i class="icon-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">PO #:
+				</td>
+				<td class="typeStatus" tabindex="5">
+					<input type="text" class="vendorbillEdittextbox" maxlength="50" style="width: 93%" data-bind="event: { keypress: isAlphaNumericSpace }, value: poNumber, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, enable: isEnable" />
+				</td>
+			</tr>
+
+			<tr>
+				<td class="typeLabels">Reference #:
+				</td>
+				<td class="typeStatus" tabindex="7">
+					<input type="text" class="vendorbillEdittextbox" maxlength="15" style="width: 93%" data-bind="value: refNumber, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, event: { keydown: isTabPress }, enable: isEnable" />
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">Delivery Date:
+				</td>
+				<td class="typeStatus">
+					<div class="typecontrols padding-top-0" tabindex="8">
+
+						<div class="input-append date" id="datepicker1" style="width: 96%;" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true" data-bind="datepicker: deliveryDate, datepickerOptions: datepickerOptions">
+							<input id="deliveryDate" type="text" size="16" class="span10" style="width: 92%;" placeholder="mm/dd/yyyy" data-bind="event: { blur: convertToDeliveryDate }, value: deliveryDate, valueUpdate: 'afterkeydown', enable: isViewOnly()" maxlength="10" />
+							<span class="add-on" data-bind="css: { disabledateLink: !isViewOnly() }">
+								<i class="icon-calendar"></i>
+							</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="table-cell fourDiv">
+		<table class="tbl-sales-order">
+			<tr>
+				<td class="typeLabels" style="width: 24%;">*Origin Zip:
+				</td>
+				<td class="typeStatus">
+
+					<!--<div data-bind=" validationElement: originZip, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Vbill-Zip-Fields' }">
+						<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (originZip.isModified() && !originZip.isValid()), tooltip: { title: originZip.isModified() ? originZip.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+						<input type="text" id="txtOriginZip" class="requiredFieldBgColor vendorbillEdittextbox" placeholder="City State or Zip..." disabled="disabled"
+							data-bind="style: { width: (originZip.isModified() && !originZip.isValid()) ? errorWidth : normalWidthForZip }, value: originZip, minLength: 2, items: 20, validationOptions: { errorElementClass: null }" />
+					</div>-->
+
+					<label class="validation-label2" data-bind=" validationElement: originZip">
+						<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (originZip.isModified() && !originZip.isValid()), tooltip: { title: originZip.isModified() ? originZip.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+						<input type="text" id="txtOriginZip" class="requiredFieldBgColor validation2 vendorbillEdittextbox" readonly="readOnly" placeholder="City State or Zip..." data-bind="css: { borderRedOnValidation: (originZip.isModified() && !originZip.isValid()) }, style: { 'padding-left': (originZip.isModified() && !originZip.isValid()) ? '7%' : '' }, value: originZip, minLength: 2, items: 20, validationOptions: { errorElementClass: null }" style="width: 93%" />
+					</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">*Destination Zip:
+				</td>
+				<td class="typeStatus">
+					<!--<div data-bind=" validationElement: destinationZip, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Vbill-Zip-Fields' }">
+						<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (destinationZip.isModified() && !destinationZip.isValid()), tooltip: { title: destinationZip.isModified() ? destinationZip.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+						<input type="text" id="txtDestinationZip" class="requiredFieldBgColor vendorbillEdittextbox" placeholder="City State or Zip..." disabled="disabled"
+							data-bind="style: { width: (destinationZip.isModified() && !destinationZip.isValid()) ? errorWidth : normalWidthForZip }, value: destinationZip, minLength: 2, items: 20, validationOptions: { errorElementClass: null }" />
+					</div>-->
+					<label class="validation-label2" data-bind=" validationElement: destinationZip">
+						<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (destinationZip.isModified() && !destinationZip.isValid()), tooltip: { title: destinationZip.isModified() ? destinationZip.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+						<input type="text" id="txtDestinationZip" class="requiredFieldBgColor validation2 vendorbillEdittextbox txtDestinationZip" readonly="readOnly" placeholder="City State or Zip..." data-bind="css: { borderRedOnValidation: (destinationZip.isModified() && !destinationZip.isValid()) }, style: { 'padding-left': (destinationZip.isModified() && !destinationZip.isValid()) ? '7%' : '' }, value: destinationZip, minLength: 2, items: 20, validationOptions: { errorElementClass: null }" style="width: 93%" />
+					</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">EDI BOL #:
+				</td>
+				<td class="typeStatus" tabindex="6">
+					<input type="text" class="vendorbillEdittextbox width-percent-93" maxlength="20" data-bind="value: mainBolNumber, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, enable: isEnable" />
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">Total Pieces:
+				</td>
+				<td class="typeStatus">
+					<input type="text" class="vendorbillEdittextbox width-percent-93" maxlength="5" readonly="readOnly" data-bind='event: { keypress: isNumber }, value: totalPieces, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+			</tr>
+
+			<tr>
+				<td class="typeLabels">Total Weight:
+				</td>
+				<td class="typeStatus">
+					<input type="text" class="vendorbillEdittextbox width-percent-93" maxlength="10" readonly="readOnly" data-bind='event: { keypress: isNumber }, value: totalWeigth, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+			</tr>
+			<tr>
+				<td class="typeLabels">Amount $:
+				</td>
+				<td class="typeStatus">
+					<input type="text" class="vendorbillEdittextbox width-percent-93" maxlength="10" readonly="readOnly" data-bind='event: { keypress: isNumber }, value: vendorAmount, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+			</tr>
+
+			<tr>
+				<td class="typeLabels">Bill Status:
+				</td>
+				<td class="typeStatus" tabindex="9">
+					<select class="margin-bottom-0 custom-input width-percent-93" data-bind="options: billStatusList, optionsValue: 'ID', optionsText: 'Value', value: selectedbillStatus, enable: isBillStatusPendig">
+					</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="table-cell fourDiv">
+		<table style="width: 90%;">
+			<tr>
+
+				<td class="typeStatus" colspan="2" style="text-align: center;">
+					<div class="typecontrols padding-top-0 margin-bottom--17">
+						<div class="btnControlcheckbox" data-bind="compose: { model: obcvendorBillOptionList, view: 'vendorBill/VendorBillOptionButtonControl' }"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td tabindex="15" class="typeStatus display-block padding-left-10" data-bind="visible: isBillForcePushToMas()" colspan="2">
+
+					<!--<button class="btn btn-primary" data-bind="click: onForcePushToMas">Force Push to Mas</button>-->
+				</td>
+			</tr>
+			<tr>
+				<td tabindex="1" class="typeStatus" colspan="2">
+					<fieldset style="width: 90%;">
+						<legend>Memo:</legend>
+						<div>
+							<textarea id="txtMemo" class="accounting-textarea  height-80 " style="width: 95%;" data-bind="value: memo, valueUpdate: 'afterkeydown', enable: isEnable" cols="10" rows="3" maxlength="100"></textarea>
+						</div>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="table-cell fourDiv">
+		<table class="margin-top-0" style="width: 95%;">
+			<!-- Mas Section !-->
+			<tr>
+				<td>
+					<div class="tableLayout">
+						<table class="tbl-sales-order" style="width: 100%;">
+							<tr>
+								<td class="typeLabels" style="width: 27%;">MAS Transfer Date:
+								</td>
+
+								<td class="typeStatus">
+									<input type="text" style="width: 94%;" maxlength="20" data-bind="value: moveToMasDate, uniqueName: true, validationOptions: { errorElementClass: null }, attr: { 'readOnly': 'readOnly' }" />
+								</td>
+							</tr>
+							<tr>
+								<td class="typeLabels">MAS Move Status:
+								</td>
+
+								<td class="typeStatus">
+									<select class="margin-bottom-0 " style="width: 99%;" data-bind="options: masClearingStatusList, optionsValue: 'ID', optionsText: 'Value', value: selectedMasClearingStatus">
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="typeLabels">*Dispute Amount $:
+								</td>
+
+								<td class="typeStatus" tabindex="16">
+									<!--<div data-bind=" validationElement: disputedAmount, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Vbill-Dispute-Fields' }">
+										<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (disputedAmount.isModified() && !disputedAmount.isValid()), tooltip: { title: disputedAmount.isModified() ? disputedAmount.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+										<input id="txtDisputedAmount" class="requiredFieldBgColor span10" type="text" maxlength="10" data-bind="enable: false, style: { width: (disputedAmount.isModified() && !disputedAmount.isValid()) ? '95%' : '99%' }, value: disputedAmount, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }" />
+									</div>-->
+									<label class="validation-label2" data-bind=" validationElement: disputedAmount">
+										<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (disputedAmount.isModified() && !disputedAmount.isValid()), tooltip: { title: disputedAmount.isModified() ? disputedAmount.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+										<input type="text" id="txtDisputedAmount" class="requiredFieldBgColor span10 validation2 txtDisputedAmount" placeholder="City State or Zip..." maxlength="10" data-bind="css: { borderRedOnValidation: (disputedAmount.isModified() && !disputedAmount.isValid()) }, style: { 'padding-left': (disputedAmount.isModified() && !disputedAmount.isValid()) ? '17px' : '' }, attr: { 'readonly': true }, value: disputedAmount, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }" style="width: 98.5%" />
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="typeLabels">*Dispute Date:
+								</td>
+								<td tabindex="17" class="typeStatus">
+									<!--<div style="width:99%;" data-bind=" validationElement: disputedDate, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Vbill-Dispute-Date-Fields' }">
+										<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (disputedDate.isModified() && !disputedDate.isValid()), tooltip: { title: disputedDate.isModified() ? disputedDate.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+										<div class="input-append date" id="Div1" style="width:92%;" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true" data-bind="datepicker: disputedDate, datepickerOptions: datepickerOptions">
+											<input id="txtDisputeDate" type="text" size="16" class="requiredFieldBgColor span10" placeholder="mm/dd/yyyy" data-bind="style: { width: (disputedDate.isModified() && !disputedDate.isValid()) ? '93%' : '99%' }, event: { blur: convertToDisputeDate }, value: disputedDate, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }, enable: isDisputeSectionEditable" maxlength="10" />
+											<span class="add-on" data-bind="css: { disabledateLink: !isDisputeSectionEditable() } ">
+												<i class="icon-calendar"></i>
+											</span>
+										</div>
+									</div>-->
+									<div class="validation-label2" data-bind=" validationElement: disputedDate">
+										<i class="fa fa-question-circle valdation_icon" style="z-index: 9999;" data-bind=" visible: (disputedDate.isModified() && !disputedDate.isValid()), tooltip: { title: disputedDate.isModified() ? disputedDate.error : '', placement: 'bottom', trigger: 'hover', container: 'body' } "></i>
+										<div class="input-append date" id="divDisputeDate" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true"
+											data-bind="datepicker: disputedDate, datepickerOptions: datepickerOptions, css: { borderRedOnValidation: (disputedDate.isModified() && !disputedDate.isValid()) }" style="width: 98%;">
+
+											<input type="text" id="txtDisputeDate" size="16" class="requiredFieldBgColor span10 validation2" placeholder="mm/dd/yyyy"
+												data-bind="event: { blur: convertToDisputeDate }, style: { 'padding-left': (disputedDate.isModified() && !disputedDate.isValid()) ? '17px' : '' }, value: disputedDate, enable: isDisputeSectionEditable, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }" maxlength="10" style="width: 91%" />
+											<span class="add-on" data-bind="css: { disabledateLink: !isDisputeSectionEditable() }">
+												<i class="icon-calendar"></i>
+											</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="typeStatus padding-left-0" tabindex="18">
+					<fieldset>
+						<legend>*Dispute Notes:</legend>
+						<!--<div data-bind=" validationElement: disputeNotes, validationOptions: { errorElementClass: 'input-validation-error' }">
+							<i class=" icon-question-sign tooltip-cursor" data-bind="visible: (disputeNotes.isModified() && !disputeNotes.isValid()), tooltip: { title: disputeNotes.isModified() ? disputeNotes.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+							<textarea id="txtDisputeNotes" class="requiredFieldBgColor span10 accounting-textarea height-100" cols="25" rows="5" maxlength="200" data-bind=" style: { width: (disputeNotes.isModified() && !disputeNotes.isValid()) ? '95.8%' : '99%' }, value: disputeNotes, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, enable: isDisputeSectionEditable"></textarea>
+						</div>-->
+						<label class="validation-label2" data-bind=" validationElement: disputedDate">
+							<i class="fa fa-question-circle valdation_icon_disputeNotes" data-bind=" visible: (disputeNotes.isModified() && !disputeNotes.isValid()), tooltip: { title: disputeNotes.isModified() ? disputeNotes.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+							<textarea id="txtAreaDisputeNotes" class="requiredFieldBgColor span10 accounting-textarea height-100 validation2" cols="25" rows="5" maxlength="200" data-bind="css: { borderRedOnValidation: (disputeNotes.isModified() && !disputeNotes.isValid()) }, style: { 'padding-left': (disputeNotes.isModified() && !disputeNotes.isValid()) ? '17px' : '' }, value: disputeNotes, valueUpdate: 'afterkeydown', uniqueName: true, validationOptions: { errorElementClass: null }, enable: isDisputeSectionEditable" style="width: 99%" />
+						</label>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="tableLayout" style="width: 100%;">
+	<div class="table-cell">
+		<table style="width: 100%;">
+			<tr>
+				<td class="typeLabels" style="width: 5%;">Final Sales Order Cost $:
+				</td>
+
+				<td class="typeStatus" style="width: 16%;">
+					<input type="text" class="vendorbilltextbox " style="width: 95%" readonly="readOnly" maxlength="10" data-bind='event: { keypress: isNumber }, value: totalCost, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+				<td>
+					<div style="width: 14px;"></div>
+				</td>
+
+				<td class="typeLabels" style="width: 5%;">Actual Cost $:
+				</td>
+
+				<td class="typeStatus">
+
+					<input type="text" class="vendorbilltextbox " style="width: 81%" readonly="readOnly" maxlength="10" data-bind='event: { keypress: isNumber }, value: actualCost, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+				<td>
+					<div style="width: 7px;"></div>
+				</td>
+
+				<td class="typeLabels" style="width: 5%;">Total Revenue $:
+				</td>
+				<td class="typeStatus">
+					<input type="text" class="vendorbilltextbox " style="width: 78%" readonly="readOnly" maxlength="10" data-bind='event: { keypress: isNumber }, value: totalRevenue, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+				<td>
+					<div></div>
+				</td>
+
+				<td class="typeLabels" style="width: 5%;">Actual Profit $:</td>
+				<td class="typeStatus">
+					<input type="text" class="vendorbilltextbox " style="width: 89%" readonly="readOnly" maxlength="10" data-bind='event: { keypress: isNumber }, value: actualProfit, uniqueName: true, validationOptions: { errorElementClass: null }' />
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

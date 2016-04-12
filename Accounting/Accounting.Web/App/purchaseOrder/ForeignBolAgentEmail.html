@@ -1,0 +1,81 @@
+﻿<div id="divForeignBolAgent" class="custom-msg-box border-radius-8" data-bind="showContentProgress: listProgress, contentProgressOptions: { showProgressBar: true, opacity: 0.9 }">
+	<!--<div class="custom-modal-header-row"></div>-->
+	<div class="custom-modal-header border-top-8">
+
+		<h4 class="custom-modal-header-text">Send Agent Mail</h4>
+	</div>
+	<table class="tbl-agentMail shipment-item margin-all-15">
+		<tr>
+			<td class="typeLabels">Customer Name:
+			</td>
+			<td class="typeStatus height-25">
+				<!--<input type="text" data-bind="value: customerName" />-->
+				<span data-bind="text: customerName"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="typeLabels height-25">Select Rep Name:
+			</td>
+			<td class="typeStatus  width-percent-74">
+				<!--<input type="text" data-bind="value: agentName" />-->
+				<span data-bind="text: agentName"></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="typeLabels">Email ID<span class="font-weight-100">(Optional)</span>:
+			</td>
+			<td class="typeStatus">
+				<!--<label class="validation-label2" data-bind=" validationElement: emailValidation">
+					<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (emailValidation.isModified() && !emailValidation.isValid()), tooltip: { title: emailValidation.isModified() ? emailValidation.error : '', placement: 'bottom', trigger: 'hover' } "></i>-->
+				<input type="text" id="emailValidation" placeholder="Email Id, separated by commas" data-bind="enable: false, value: emailValidation, validationOptions: { errorElementClass: null }" style="width: 95%" />
+				<!--</label>-->
+			</td>
+		</tr>
+		<tr>
+			<td class="typeLabels">Attached Files:
+			</td>
+			<td class="typeStatus">
+				<table class="table-bordered shipment-item width-percent-100">
+					<thead>
+						<tr>
+							<th>
+								<label class="style-label">Description</label></th>
+							<th>
+								<label class="style-label">Remove</label></th>
+						</tr>
+					</thead>
+					<tbody data-bind='foreach: uploadedItems'>
+						<tr>
+							<td>
+								<span data-bind="text: Description"></span>
+							</td>
+							<td class="td-upload-agent-mail">
+								<input type="image" data-bind="click: $parent.removeAttachedItem" src="Content/images/Icon_Trash.png" onmouseover="this.src='Content/images/Icon_Trash_Over.png';" onmouseout="this.src='Content/images/Icon_Trash.png';" onmousedown="this.src='Content/images/Icon_Trash_Down.png';" onmouseup="this.src='Content/images/Icon_Trash_Over.png';" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<fieldset>
+					<legend>Comments:</legend>
+					<textarea id="txtComments" data-bind="value: Comments" cols="25" rows="5" maxlength="200" class="textarea-percent-96 height-60"></textarea>
+				</fieldset>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2">
+				<div id="buttonDiv" class="align-right margin-top-5">
+
+					<button class="btn btn-primary" data-bind="click: onSendMail">Send Mail</button>
+
+					<button class="btn btn-primary" data-bind="click: closePopup">Close</button>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

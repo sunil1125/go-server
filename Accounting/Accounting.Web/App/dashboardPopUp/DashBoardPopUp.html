@@ -1,0 +1,83 @@
+﻿<div id="divDashBoardPopUp" class="custom-msg-box border-radius-8" style="max-width: 380px !important">
+	<!--<div class="custom-modal-header-row"></div>-->
+	<div class="custom-modal-header border-top-8">
+
+		<h4 class="custom-modal-header-text">Select Date Range</h4>
+	</div>
+	<div class="tableLayout" data-bind="showContentProgress: listProgress, contentProgressOptions: { showProgressBar: true, opacity: 0.9 }">
+		<table class="tbl-sales-order shipment-item margin-all-15">
+			<tr>
+				<td class="typeLabels">From</td>
+				<td class="typeLabels">
+					<div class="validation-label2" data-bind=" validationElement: fromDate">
+						<i class="fa fa-question-circle valdation_icon" style="z-index: 999;" data-bind=" visible: (fromDate.isModified() && !fromDate.isValid()), tooltip: { title: fromDate.isModified() ? fromDate.error : '', placement: 'bottom', trigger: 'hover', container: 'body' } "></i>
+						<div id="toDateDIV" class="input-append date" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true"
+							data-bind="datepicker: fromDate, datepickerOptions: datepickerOptions, css: { borderRedOnValidation: (fromDate.isModified() && !fromDate.isValid()) }">
+
+							<input type="text" id="txtFormDate" size="16" class="requiredFieldBgColor span10 validation2 height-20-important" placeholder="mm/dd/yyyy"
+								data-bind="event: { blur: convertTofromDate }, style: { 'padding-left': (fromDate.isModified() && !fromDate.isValid()) ? '19px' : '' }, value: fromDate, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }" maxlength="10" style="width: 75%" />
+							<span class="add-on">
+								<i class="icon-calendar"></i>
+							</span>
+						</div>
+					</div>
+				</td>
+				<td class="typeLabels">To</td>
+				<td class="typeLabels">
+					<div class="validation-label2" data-bind=" validationElement: toDate">
+						<i class="fa fa-question-circle valdation_icon" style="z-index: 999;" data-bind=" visible: (toDate.isModified() && !toDate.isValid()), tooltip: { title: toDate.isModified() ? toDate.error : '', placement: 'bottom', trigger: 'hover', container: 'body' } "></i>
+						<div class="input-append date" id="fromDateDatepicker" data-date="mm/dd/yyyy" data-date-format="mm/dd/yyyy" data-date-today-btn="true" data-date-today-highlight="true"
+							data-bind="datepicker: toDate, datepickerOptions: datepickerOptions, css: { borderRedOnValidation: (toDate.isModified() && !toDate.isValid()) }">
+
+							<input type="text" id="txtToDate" size="16" class="requiredFieldBgColor span10 validation2 height-20-important" placeholder="mm/dd/yyyy"
+								data-bind="event: { blur: convertToToDate }, style: { 'padding-left': (toDate.isModified() && !toDate.isValid()) ? '19px' : '' }, value: toDate, valueUpdate: 'afterkeydown', validationOptions: { errorElementClass: null }" maxlength="10" style="width: 75%" />
+							<span class="add-on">
+								<i class="icon-calendar"></i>
+							</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<div style="height: 8px;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="radio" title="Summary Report" value="SummaryReport" name="report" style="margin: 0px;" checked="checked" />Summary Report
+				</td>
+				<td colspan="2">
+					<input type="radio" title="Detailed Report" value="DetailReport" name="report" style="margin: 0px;" />Detailed Report
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<div style="height: 8px;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<div data-bind="visible: isRexnord()">
+							Report Type: 
+					<select id="drpItems" class=" newselect width-percent-51 margin-left-percent-2" data-togle="tooltip">
+						<option value="UVBReport">UVB Report</option>
+						<option value="ManualAuditReport">Audit Report</option>
+					</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<div style="height: 8px;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="text-align: right">
+					<button class="btn btn-primary" data-bind="click: onDownloadClick, enable: isDownloaded">Download</button>
+					<button class="btn btn-primary" data-bind="click: closePopup">Close</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

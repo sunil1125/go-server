@@ -1,0 +1,119 @@
+﻿<!--<changeHistory>
+<id>US19763</id> <by>SHREESHA ADIGA</by> <date>01-Dec-2015</date> <description>Removed Chart container for "Inactive UVB"</description>
+</changeHistory>-->
+<style>
+.tooltip-inner
+{
+	max-width: 350px;
+	padding: 5px;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	background-color: black !important;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+</style>
+<div class="container-fluid">
+	<div id="mainDiv" style="margin-top: 2%;">
+		<div style="width: 100%;">
+			<table style="margin: 0 auto">
+				<tr>
+					<td>
+						<div style="background-color:white" data-bind="showContentProgress: listProgress, contentProgressOptions: { showProgressBar: true, opacity: 0.9 }">
+							<table style="width:100%;">
+								<tr>
+									<td>
+										<i id="pNumberofUVBs" class="fa fa-chevron-left fa-lg" data-bind="click: onClickPreviousNumberofUVBsCreated, attr: { 'class': customClass}, tooltip: {title: 'Next Dates'}"></i>
+									</td>
+									<td>
+										<div id="chart-container" class=" float-left">FusionCharts will render here</div>
+									</td>
+									<td>
+										<i id="nNumberofUVBs" class="fa fa-chevron-right fa-lg enableAwsomFontLeftRightArrowIcon" data-bind="click: onclickNextNumberofUVBsCreated, tooltip: {title: 'Previous Dates'}"></i>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td>
+						<div style="width: 8px;"></div>
+					</td>
+					<td>
+						<div style="background-color:white;">
+							<table style="width:100%">
+								<tr>
+									<td colspan="3">
+										<div id="chart-container2" class=" float-left">FusionCharts will render here</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<!--<td>
+						<div style="width: 8px;"></div>
+					</td>-->
+				</tr>
+				<tr>
+					<td colspan="3" style="height:10px;"></td>
+				</tr>
+				<tr data-bind="visible: isRexnordCustomer()">
+					<td>
+						<div style="background-color:white" data-bind="showContentProgress: listProgressForRB, contentProgressOptions: { showProgressBar: true, opacity: 0.9 }">
+							<table style="width:100%;">
+								<tr>
+									<td>
+										<i id="pNumberofMAB_RB" class="fa fa-chevron-left fa-lg" data-bind="click: onClickPreviousNumberofManualAuditBill_RequoteBoard, attr: { 'class': customClassForRB}, tooltip: {title: 'Next Dates'}"></i>
+									</td>
+									<td>
+										<div id="chart-Container-Requote" class=" float-left">FusionCharts will render here</div>
+									</td>
+									<td>
+										<i id="nNumberofMAB_RB" class="fa fa-chevron-right fa-lg enableAwsomFontLeftRightArrowIcon" data-bind="click: OnClickNextNumberofManualAuditBill_RequoteBoard, tooltip: {title: 'Previous Dates'}"></i>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td>
+						<div style="width: 8px;"></div>
+					</td>
+					<td>
+						<div style="background-color:white" data-bind="showContentProgress: listProgressForSB, contentProgressOptions: { showProgressBar: true, opacity: 0.9 }">
+							<table style="width:100%;">
+								<tr>
+									<td>
+										<i id="pNumberofMAB_SB" class="fa fa-chevron-left fa-lg" data-bind="click: onClickPreviousNumberofManualAuditBill_SubourderBoard, attr: { 'class': customClassForSB}, tooltip: {title: 'Next Dates'}"></i>
+									</td>
+									<td>
+										<div id="chart-Container-Suborder" class=" float-left">FusionCharts will render here</div>
+									</td>
+									<td>
+										<i id="nNumberofMAB_sB" class="fa fa-chevron-right fa-lg enableAwsomFontLeftRightArrowIcon" data-bind="click: onClickNextNumberofManualAuditBill_SubourderBoard, tooltip: {title: 'Previous Dates'}"></i>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<!--<td>
+						<div style="width: 8px;"></div>
+					</td>-->
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="float-right">
+							<table>
+								<tr>
+									<td>
+										<button class="btn btn-primary" data-bind="click: onClickDownloadFile, visible: isAcctCustomer()" style="height: 30px;">Download Data Files</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+﻿<div class="keepContentInCenter">
+	<div class="row-fluid" data-bind="showContentProgress: showContentProgress, contentProgressOptions: { showProgressBar: true, childId: 'section-content', zindex: 50 }, css: isDenimBackground() ? 'contentAreaDenimBackground' : 'contentAreaWithoutDenimBackground' ">
+		<div class="container-fluid contentArea" id="section-content" data-bind="router: { transition: 'entrance', afterCompose: router.afterCompose, cacheViews: false, binding: beforeBind }"></div>
+	</div>
+</div>

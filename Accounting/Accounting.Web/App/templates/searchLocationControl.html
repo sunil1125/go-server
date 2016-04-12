@@ -1,0 +1,11 @@
+﻿<!--<div data-bind=" validationElement: cityStateZip, validationOptions: { errorElementClass: 'input-validation-error errorWidth-Address-AutoComplete-Fields' }">
+	<i class=" icon-question-sign tooltip-cursor" data-bind=" visible: (cityStateZip.isModified() && !cityStateZip.isValid()), tooltip: { title: cityStateZip.isModified() ? cityStateZip.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+	<input type="text" class="requiredFieldBgColor" autofocus="autofocus" placeholder="City State or Zip..." autocomplete="off" data-filterkey="Display"
+		data-bind="value: cityStateZip, typeahead: searchLocation, minLength: 2, items: 100, event: { onSelect: onSelectLocation, keydown: isTabPress }, style: { width: (cityStateZip.isModified() && !cityStateZip.isValid()) ? errorWidth : normalWidth }, validationOptions: { errorElementClass: null }, throttle: true, valueUpdate: 'afterkeydown', attr: { 'readonly': shouldBeReadOnly, id: id }" />
+</div>-->
+
+<div class="validation-label2 " data-bind="css: idlabel">
+	<i class="fa fa-question-circle valdation_icon" data-bind=" visible: (cityStateZip.isModified() && !cityStateZip.isValid()), tooltip: { title: cityStateZip.isModified() ? cityStateZip.error : '', placement: 'bottom', trigger: 'hover' } "></i>
+	<input type="text" id="txtcityStateZip" class="requiredFieldBgColor validation2 cityStateZipClass" autofocus="autofocus" placeholder="City State or Zip..." autocomplete="off" data-filterkey="Display"
+		data-bind=" value: cityStateZip, typeahead: searchLocation, minLength: 2, items: 100, event: { onSelect: onSelectLocation, keydown: isTabPress }, style: { 'padding-left': (cityStateZip.isModified() && !cityStateZip.isValid()) ? '15px' : '', width: normalWidth }, css: { borderRedOnValidation: (cityStateZip.isModified() && !cityStateZip.isValid()) }, validationOptions: { errorElementClass: null }, throttle: true, valueUpdate: 'afterkeydown', attr: { 'readonly': shouldBeReadOnly, id: id }" />
+</div>

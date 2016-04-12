@@ -1,0 +1,52 @@
+﻿<div class="row-fluid">
+	<div class="app-page-title margin-left-25">
+		<span class="PageTitleBlack">Unmatched VendorBill Board</span>
+	</div>
+
+	<div class="container-fluid">
+		<div class="accordion" id="accordion2">
+			<div class="ediGridWithHeader margin-top-30 gridOptionalHeader">
+
+				<!-- HEADER COUNT DIV -->
+				<!--				<div>
+					<div style="float: left">
+						<label class="label-padding-10">Total UVB Count : &nbsp;
+							<input style="background-color: white !important;" class="header-count-input" data-bind="value: totalUVBCount" readonly /></label>
+					</div>
+					<div style="float: left">
+						<label class="label-padding-10">Created Today :&nbsp;
+							<input style="background-color: white !important;" class="header-count-input" data-bind="value: totalUVBCreatedToday" readonly /></label>
+					</div>
+					<div style="float: left">
+						<label class="label-padding-10">Worked Today :&nbsp;
+							<input style="background-color: white !important;" class="header-count-input" data-bind="value: totalUVBWorkedToday" readonly /></label>
+					</div>
+				</div>-->
+
+				<div class="margin-right-35 float-right margin-all-10">
+					<table>
+						<tr>
+							<td>
+								<button class="btn btn-primary margin-top--3" data-bind="click: onSendAgentMail, visible: isSendMailOrMoveTORexnord" style="height: 30px;">Send Agent Mail</button>
+							</td>
+							<td>
+								<button class="btn btn-primary margin-top--3" data-bind="click: onMoveToRexnordBoard, visible: isSendMailOrMoveTORexnord" style="height: 30px;">Move To Rexnord Board</button>
+							</td>
+							<td>
+								<button class="btn btn-primary height-30" style="margin-top: -3px;" data-bind="click: onClickClearAll, visible: isSearchFilterItemsData">Clear Filter</button>
+							</td>
+							<td class="position-Relative">
+								<a href="javascript:void(0)" data-bind="click: reloadPage, attr: { title: currentDateTime }"><i class="reloadButtonRe-QuoteBoard"></i></a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div id="idGridPOBord" class="gridPOBord gridHeaderPositionForPOBoard" data-bind="compose: { model: purchaseOrderBoardsGrid, view: '../templates/reportViewerControlV2' }"></div>
+		</div>
+	</div>
+</div>
