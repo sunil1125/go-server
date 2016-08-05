@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hermes.WebApi.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Hermes.WebApi.Web.RouteConfig">
+            <summary>
+            This is the route config for all the MVC pages
+            </summary>
+        </member>
+        <member name="M:Hermes.WebApi.Web.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Registers the routes.
+            </summary>
+            <param name="routes">The routes.</param>
+        </member>
+        <member name="T:Hermes.WebApi.Web.SwaggerConfig">
+            <summary>
+            Swagger config file which is used to on/off the features of the swagger
+            </summary>
+        </member>
+        <member name="M:Hermes.WebApi.Web.SwaggerConfig.Register">
+            <summary>
+            Method which register the features of the swagger.
+            </summary>
+        </member>
+        <member name="T:Hermes.WebApi.Web.WebApiConfig">
+            <summary>
+            This class provides the configuration for the web API.
+            </summary>
+        </member>
+        <member name="M:Hermes.WebApi.Web.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Registers the specified configuration of web API.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="T:Hermes.WebApi.Web.Controllers.HelpController">
+            <summary>
+            This controllers take cares the help page of the api.
+            </summary>
+            <seealso cref="T:System.Web.Mvc.Controller"/>
+        </member>
+        <member name="M:Hermes.WebApi.Web.Controllers.HelpController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns>Help View</returns>
+        </member>
+        <member name="T:Hermes.WebApi.Web.Controllers.LoginController">
+            <summary>
+            This controller class handles the login/authentication.
+            </summary>
+        </member>
+        <member name="M:Hermes.WebApi.Web.Controllers.LoginController.Get">
+            <summary>
+            Posts the specified login object to authentication of the API.
+            </summary>
+            <returns><c>HttpStatusCode.OK</c> if [login success]; otherwise, <c>HttpStatusCode.Unauthorized</c>.</returns>
+        </member>
+        <member name="M:Hermes.WebApi.Web.Controllers.LoginController.Post(Hermes.WebApi.Web.Models.Login)">
+            <summary>
+            Posts the specified login object to authentication of the API.
+            </summary>
+            <param name="login">The login object with the username and password.</param>
+            <returns><c>HttpStatusCode.OK</c> if [login success]; otherwise, <c>HttpStatusCode.Unauthorized</c>.</returns>
+        </member>
+        <member name="T:Hermes.WebApi.Web.Controllers.LogoutController">
+            <summary>
+            API controller of the common login resource which is generic in nature.
+            </summary>
+        </member>
+        <member name="M:Hermes.WebApi.Web.Controllers.LogoutController.Get">
+            <summary>
+            Get action for the login resource.
+            </summary>
+            <returns>HttpResponseMessage</returns>
+        </member>
+        <member name="T:Hermes.WebApi.Web.WebApiApplication">
+            <summary>
+            Class WebApiApplication.
+            </summary>
+        </member>
+        <member name="M:Hermes.WebApi.Web.WebApiApplication.Application_Start">
+            <summary>
+            Application_s the start.
+            </summary>
+        </member>
+        <member name="T:Hermes.WebApi.Web.Models.Login">
+            <summary>
+            Class Login object.
+            </summary>
+        </member>
+        <member name="P:Hermes.WebApi.Web.Models.Login.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Hermes.WebApi.Web.Models.Login.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:Hermes.WebApi.Web.Models.Login.RememberMe">
+            <summary>
+            Gets or sets a value indicating whether [remember me].
+            </summary>
+            <value><c>true</c> if [remember me]; otherwise, <c>false</c>.</value>
+        </member>
+    </members>
+</doc>
